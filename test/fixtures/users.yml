@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  nick_name: MyString
-  email: MyString
-  password_hash: MyString
+allie:
+  first_name: Allie
+  last_name: Rowan
+  nick_name: Alrow
+  email: arowan@wesleyan.edu
+  password_hash: <%= BCrypt::Password.create("password") %>
 
-two:
-  first_name: MyString
-  last_name: MyString
-  nick_name: MyString
-  email: MyString
-  password_hash: MyString
+katie:
+  first_name: Katie
+  last_name: Colasacco
+  nick_name: Kate
+  email: fakeemail@gmail.com
+  password_hash: <%= BCrypt::Password.create("password1") %>

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyText
-  url: MyText
-  user_id: 1
+  title: Github
+  url: http://www.github.com
+  user: allie
 
 two:
-  title: MyText
-  url: MyText
-  user_id: 1
+  title: My Greatest Post
+  url: http://facebook.com
+  user: katie

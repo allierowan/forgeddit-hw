@@ -1,2 +1,16 @@
-<h1>Shares#index</h1>
-<p>Find me in app/views/shares/index.html.erb</p>
+<h1>All Shares</h1>
+<dl>
+  <% @shares.each do |share| %>
+    <dt>
+      <%= link_to share.title, share.url %>
+    </dt>
+    <dd>
+      shared at <%= share.created_at %> by <%= share.user.nick_name %>
+    </dd>
+  <% end %>
+</dl>
+<pre>
+  <code>
+    <%= current_user.email if current_user %>
+  </code>
+</pre>

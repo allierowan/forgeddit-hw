@@ -1,2 +1,17 @@
-<h1>Shares#new</h1>
-<p>Find me in app/views/shares/new.html.erb</p>
+<h1>Share Something</h1>
+<% @share.errors.full_messages.each do |message| %>
+<%= message %>
+<% end %>
+<%= form_for @share do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.url_field :url, class:"form-control" %>
+  </div>
+
+  <%= f.submit class:"btn btn-primary" %>
+<% end %>

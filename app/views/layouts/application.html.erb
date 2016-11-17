@@ -14,8 +14,28 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <%= yield %>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/shares">Forgeddit</a>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Share Something", new_share_path %></li>
+          <li>
+            <% if current_user %>
+              <%= link_to "Logout", session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Login", new_session_path %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "Sign up", new_user_path unless current_user %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

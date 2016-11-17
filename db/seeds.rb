@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.create(nick_name: "Allie", email: "arowan@wesleyan.edu")
+10.times do
+  user.shares.create(title: FFaker::Book.title, url: FFaker::Internet.http_url)
+end
