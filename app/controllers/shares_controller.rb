@@ -27,6 +27,12 @@ class SharesController < ApplicationController
   end
 
   def edit
+    @share = Share.find(params["id"])
+    if @share.udpate(share_params) && @share.user == current_user
+      redirect_to :index
+    else
+      @message = "You are not logged in as the owner of this post"
+    end
   end
 
   def share_params
