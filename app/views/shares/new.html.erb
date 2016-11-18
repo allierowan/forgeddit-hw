@@ -1,7 +1,7 @@
 <h1>Share Something</h1>
 
   <% @share.errors.full_messages.each do |message| %>
-    <%= message %>
+      <div class="alert alert-danger"><%= message %></div>
   <% end %>
 
 <%= form_for @share do |f| %>

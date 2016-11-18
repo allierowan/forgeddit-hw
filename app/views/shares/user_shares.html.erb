@@ -11,10 +11,13 @@
     </dt>
     <dd>
       shared at <%= share.created_at %> by <%= share.user.nick_name %>
-      <% if current_user == share.user %>
-        <%= link_to "Edit Share", edit_share_path(share.id) %>
-        <%= link_to "Delete Share", share_path(share.id), method: :delete %>
-      <% end %>
+    </dd>
+    <dd>
+      <small><%= link_to "#{share.comments.size} Comments", share_comments_path(share.id) %></small>
+        <% if current_user == share.user %>
+          <%= link_to "Edit Share", edit_share_path(share.id) %>
+          <%= link_to "Delete Share", share_path(share.id), method: :delete %>
+        <% end %>
     </dd>
   <% end %>
 </dl>

@@ -6,7 +6,7 @@ class SharesController < ApplicationController
     else
       @message = "You must be logged in to create a post"
       @shares = Share.all.reverse
-      render :index
+      render new_session_path
     end
   end
 

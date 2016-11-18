@@ -1,4 +1,7 @@
 <h1>Edit Share</h1>
+<% @share.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger"><%= message %></div>
+<% end %>
 <%= form_for @share do |f| %>
 
   <div class="form-group">
@@ -10,6 +13,6 @@
     <%= f.label :url %>
     <%= f.url_field :url, class: "form-control" %>
   </div>
-  
+
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

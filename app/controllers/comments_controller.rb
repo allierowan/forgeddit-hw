@@ -1,7 +1,13 @@
 class CommentsController < ApplicationController
   def new
-    @comment = Comment.new()
-    @share = Share.find(params["share_id"])
+    if current_user
+      @comment = Comment.new()
+      @share = Share.find(params["share_id"])
+      render :new
+    else
+      @message = "You must be logged in to comment"
+      render new_session_path
+    end
   end
 
   def create
@@ -32,7 +38,7 @@ class CommentsController < ApplicationController
 
   def index
     @share = Share.find(params["share_id"])
-    @comments = @share.comments
+    @comments = @share.comments.reverse
   end
 
   def destroy

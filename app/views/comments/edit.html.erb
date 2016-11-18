@@ -7,7 +7,7 @@
   <dt>
     <small><%= link_to "Comment", new_share_comment_path(@share.id) %></small>
   </dt>
-  <% @share.comments.each do |comment| %>
+  <% @share.comments.reverse.each do |comment| %>
     <% if comment == @comment %>
       <div class="single-comment">
         <dt>

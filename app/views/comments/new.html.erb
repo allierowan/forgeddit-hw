@@ -8,9 +8,42 @@
   </div>
 <% end %>
 
-<%= form_for([@share, @comment]) do |f| %>
-  <div class="form-group">
-    <%= f.text_area :body, class: "form-control" %>
+<p>
+  <strong><%= link_to @share.title, @share.url %></strong>
+  <br />
+  <small><%= @share.created_at %> by <%= @share.user.nick_name %></small>
+</p>
+<dl class="comment-block">
+  <dt>
+    <small><%= link_to "Comment", new_share_comment_path(@share.id) %></small>
+  </dt>
+  <div class="single-comment">
+    <dt>
+      <%= current_user.nick_name %>
+    </dt>
+    <dd>
+      <%= form_for([@share, @comment]) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :body, class: "form-control" %>
+        </div>
+        <%= f.submit "Add Comment", class: "btn btn-primary" %>
+      <% end %>
+    </dd>
   </div>
-  <%= f.submit "Add Comment", class: "btn btn-primary" %>
-<% end %>
+  <% @share.comments.each do |comment| %>
+    <div class="single-comment">
+      <dt>
+        <%= comment.user.nick_name %>
+      </dt>
+      <dd>
+        <%= comment.body %>
+      </dd>
+      <dd>
+        <small><% if comment.user == current_user %>
+          <%= link_to "Edit", edit_share_comment_path(share_id: @share.id, id: comment.id) %>
+        <% end %></small>
+      </dd>
+    </div>
+  <% end %>
+
+</dl>
