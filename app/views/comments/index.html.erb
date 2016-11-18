@@ -1,0 +1,20 @@
+<p>
+  <strong><%= link_to @share.title, @share.url %></strong>
+  <br />
+  <small><%= @share.created_at %> by <%= @share.user.nick_name %></small>
+</p>
+<dl class="comment-block">
+  <dt>
+    <small><%= link_to "Comment", new_share_comment_path(@share.id) %></small>
+  </dt>
+  <% @comments.each do |comment| %>
+    <div class="single-comment">
+      <dt>
+        <%= comment.user.nick_name %>
+      </dt>
+      <dd>
+        <%= comment.body %>
+      </dd>
+    </div>
+  <% end %>
+</dl>

@@ -1,7 +1,9 @@
 <h1>Share Something</h1>
-<% @share.errors.full_messages.each do |message| %>
-<%= message %>
-<% end %>
+
+  <% @share.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+
 <%= form_for @share do |f| %>
   <div class="form-group">
     <%= f.label :title %>

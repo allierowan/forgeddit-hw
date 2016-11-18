@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :shares
+  has_many :comments
+  validates :email, uniqueness: true
 
   def password=(unhashed_password)
     @_password = BCrypt::Password.create(unhashed_password)

@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :shares
-  resources :users, only: [:new, :create]
+  resources :shares do
+    resources :comments
+  end
+
+  resources :users, only: [:new, :create] do
+    resources :shares, only: [:index], action: :user_shares
+    resources :comments, only: [:index], action: :user_comments
+  end
+
   root 'users#new'
   resource :session, only: [:new, :create, :destroy]
 

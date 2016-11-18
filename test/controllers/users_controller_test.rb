@@ -8,7 +8,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "can create new user" do
-    post users_path params: { user: { first_name: "Allie", last_name: "Rowan", email: "arowan@wesleyan.edu", password: "password" } }
+    post users_path params: { user: { first_name: "Allie", last_name: "Rowan", email: "arowan+1@wesleyan.edu", password: "password" } }
     assert_response :redirect
     assert_equal "Allie", User.last.first_name
   end

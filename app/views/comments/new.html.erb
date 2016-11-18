@@ -1,0 +1,16 @@
+<% @comment.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger">
+    <% if message == "User must exist" %>
+      <%= "You must be logged in to comment" %>
+    <% else %>
+      <%= message %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for([@share, @comment]) do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: allie
+  share: two
+  body: This is pretty cool
+
+two:
+  user_id: katie
+  share_id: one
+  body: Likewise

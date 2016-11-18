@@ -21,6 +21,13 @@
           <li><%= link_to "Share Something", new_share_path %></li>
           <li>
             <% if current_user %>
+              <%= link_to "Your Shares", user_shares_path(current_user.id) %>
+            <% end %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if current_user %>
               <%= link_to "Logout", session_path, method: :delete %>
             <% else %>
               <%= link_to "Login", new_session_path %>

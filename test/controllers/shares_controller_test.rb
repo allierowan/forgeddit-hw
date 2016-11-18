@@ -26,9 +26,9 @@ class SharesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit form" do
-    get edit_share_path
+    get edit_share_path(shares(:one).id)
     assert_response :success
-    assert_match(/Edit share/, response.body)
+    assert_match(/Edit Share/, response.body)
   end
 
 end
