@@ -15,6 +15,18 @@
       <dd>
         <%= comment.body %>
       </dd>
+      <dd>
+        <small><% if comment.user == current_user %>
+          <%= link_to "Edit", edit_share_comment_path(share_id: @share.id, id: comment.id) %>
+          <%= link_to "Delete", share_comment_path(share_id: @share.id, id: comment.id), method: :delete %>
+        <% end %></small>
+      </dd>
+      <% if comment.user == current_user %>
+        <dd>
+
+        </dd>
+      <% end %>
     </div>
+
   <% end %>
 </dl>

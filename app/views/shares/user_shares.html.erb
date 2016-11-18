@@ -7,7 +7,7 @@
 <dl>
   <% @shares.each do |share| %>
     <dt>
-      <%= link_to share.title, share.url %>
+      <h4><%= link_to share.title, share.url %></h4>
     </dt>
     <dd>
       shared at <%= share.created_at %> by <%= share.user.nick_name %>
@@ -18,8 +18,3 @@
     </dd>
   <% end %>
 </dl>
-<pre>
-  <code>
-    <%= current_user.email if current_user %>
-  </code>
-</pre>

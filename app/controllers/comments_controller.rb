@@ -16,11 +16,28 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params["id"])
+    @share = @comment.share
+  end
+
+  def update
+    @comment = Comment.find(params["id"])
+    @share = @comment.share
+    if @comment.update(comment_params)
+      redirect_to share_comments_path
+    else
+      render :edit
+    end
   end
 
   def index
     @share = Share.find(params["share_id"])
     @comments = @share.comments
+  end
+
+  def destroy
+    Comment.find(params["id"]).destroy
+    redirect_to share_comments_path
   end
 
   def comment_params

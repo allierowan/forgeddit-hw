@@ -13,4 +13,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Allie", User.last.first_name
   end
 
+  test "can get edit form for users profile info" do
+    post session_path, params: {email: 'arowan@wesleyan.edu', password: 'password'}
+    get edit_user_path(session["current_user_id"])
+    assert_match(/Edit your profile/, response.body)
+  end
+
 end
