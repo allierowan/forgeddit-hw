@@ -1,32 +1,14 @@
-<p>
-  <strong><%= link_to @share.title, @share.url %></strong>
-  <br />
-  <small><%= time_ago_in_words(@share.created_at) %> ago by <%= @share.user.nick_name %></small>
-</p>
-<dl class="comment-block">
-  <dt>
-    <small class="share-nav"><%= link_to "Comment", new_share_comment_path(@share.id) %></small>
-  </dt>
-  <% @comments.each do |comment| %>
-    <div class="single-comment">
-      <dt>
-        <%= comment.user.nick_name %>
-      </dt>
-      <dd>
-        <%= comment.body %>
-      </dd>
-      <dd>
-        <% if comment.user == current_user %>
-          <small class="share-nav"><%= link_to "Edit", edit_share_comment_path(share_id: @share.id, id: comment.id) %></small>
-          <small class="share-nav"><%= link_to "Delete", share_comment_path(share_id: @share.id, id: comment.id), method: :delete %></small>
-        <% end %>
-      </dd>
-      <% if comment.user == current_user %>
-        <dd>
-
-        </dd>
-      <% end %>
-    </div>
-
-  <% end %>
-</dl>
+<% if @message %>
+  <div class="alert alert-danger">
+    <%= @message %>
+  </div>
+<% end %>
+<%= render 'single_share' %>
+<div class="row">
+  <aside class="col-md-1">
+  </aside>
+  <article class="col-md-11 comment-section">
+    <small class="share-nav add-comment"><%= link_to "Add Comment", new_share_comment_path(@share.id) %></small>
+    <%= render 'comment_index' %>
+  </article>
+</div>

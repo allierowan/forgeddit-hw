@@ -1,0 +1,26 @@
+<dl class="comment-block">
+  <% @comments.each do |comment| %>
+    <span class="comment-date-circle col-md-1">
+      <p class="date-month">
+        <%= comment.created_at.strftime("%b") %>
+      </p>
+      <p class="date-day">
+        <%= comment.created_at.strftime("%d") %>
+      </p>
+    </span>
+    <div class="single-comment col-md-11">
+      <dt>
+        <%= comment.user.nick_name %>
+      </dt>
+      <dd>
+        <%= comment.body %>
+      </dd>
+      <dd>
+        <% if comment.user == current_user %>
+          <small class="share-nav"><%= link_to "Edit", edit_share_comment_path(share_id: @share.id, id: comment.id) %></small>
+          <small class="share-nav"><%= link_to "Delete", share_comment_path(share_id: @share.id, id: comment.id), method: :delete %></small>
+        <% end %>
+      </dd>
+    </div>
+  <% end %>
+</dl>

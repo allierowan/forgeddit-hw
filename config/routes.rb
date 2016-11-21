@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :shares do
     resources :comments
-    resources :votes, only: [:show, :update, :create]
+    resources :votes, only: [:show, :update, :create], shallow: true
   end
 
   resources :users, only: [:new, :create, :edit, :update, :show] do

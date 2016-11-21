@@ -7,3 +7,40 @@
 .single-comment {
   padding: 5px;
 }
+.comment-section {
+  margin-left: 140px;
+  border-top: 1px solid rgb(230, 230, 230);
+  padding-top: 20px;
+  dt {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+}
+
+span.comment-date-circle {
+  margin-right: 15px;
+  margin-top: 17px;
+  background-color: #026577;
+  color: white;
+  border-radius: 250px;
+  width: 40px;
+  height: 40px;
+  font-size: 10px;
+  padding-top: 5px;
+  padding-left: 13px;
+  p {
+    margin: 0px;
+    text-align: center;
+  }
+  p.date-month {
+    margin-left: -2px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  p.date-day {
+    margin-left: 3px;
+  }
+}
+textarea#comment_body {
+  width: 500px;
+}

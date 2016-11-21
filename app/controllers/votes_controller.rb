@@ -15,7 +15,8 @@ class VotesController < ApplicationController
   def update
     if current_user
       @vote = Vote.find(params["id"])
-      @vote.update!(vote_params)
+      @vote.value += params[:vote][:value].to_i
+      @vote.save
       redirect_to shares_path
     else
       @message = "You must be logged in to vote"
