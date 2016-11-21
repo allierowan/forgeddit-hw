@@ -38,7 +38,7 @@
         </span>
         <div class="single-comment col-md-11">
           <dt>
-            <%= comment.user.nick_name %>
+            <%= comment.user.nick_name %> <small><%= time_ago_in_words(comment.created_at) %> ago</small>
           </dt>
           <dd>
             <%= comment.body %>

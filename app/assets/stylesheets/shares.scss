@@ -1,6 +1,13 @@
 // Place all the styles related to the shares controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body.forgeddit {
+  background-color: #e0e0e0;
+}
+
+body.forgeddit h1 {
+  font-size: 20px;
+}
 
 dt h4 {
   margin-bottom: 0px;
@@ -10,6 +17,15 @@ dt h4 {
 .one-share {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+a.share-title {
+  color: #314DC1;
+
+}
+a.share-title:hover {
+  color: #081C6E;
+  text-decoration: none;
 }
 
 dd:last-child {
@@ -43,4 +59,18 @@ span.date-circle {
   text-align: center;
   padding-top: 5px;
   padding-left: 13px;
+  p {
+    margin: 0px;
+    text-align: center;
+  }
+  p.date-month {
+    margin-top: 1px;
+    margin-left: -2px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  p.date-day {
+    margin-left: 2px;
+    font-size: 13px;
+  }
 }

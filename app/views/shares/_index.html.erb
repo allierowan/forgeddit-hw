@@ -27,10 +27,17 @@
         </p>
       <% end %>
     </span>
-    <span class="date-circle col-md-1"><strong><%= share.created_at.strftime("%b") %></strong><br><%= share.created_at.strftime("%d") %></span>
+    <span class="date-circle col-md-1">
+      <p class="date-month">
+        <%= share.created_at.strftime("%b") %>
+      </p>
+      <p class="date-day">
+        <%= share.created_at.strftime("%d") %>
+      </p>
+    </span>
     <article class="one-share col-md-10">
       <dt>
-        <h4><%= link_to share.title, share.url %></h4>
+        <h4><%= link_to share.title, share.url, class: "share-title" %></h4>
       </dt>
       <dd>
         <small>shared about <%= time_ago_in_words(share.created_at) %> ago by

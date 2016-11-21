@@ -6,13 +6,18 @@
 }
 .single-comment {
   padding: 5px;
+  small {
+    color: rgb(148, 148, 148);
+    font-weight: lighter;
+    padding-left: 5px;
+  }
 }
 .comment-section {
   margin-left: 140px;
   border-top: 1px solid rgb(230, 230, 230);
   padding-top: 20px;
   dt {
-    font-size: 20px;
+    font-size: 13px;
     padding-bottom: 5px;
   }
 }
