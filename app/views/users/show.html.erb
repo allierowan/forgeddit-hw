@@ -26,5 +26,5 @@
     <%= current_user.nick_name %>
   </dd>
 </dl>
-<%= link_to "Edit Profile Info", edit_user_path(current_user.id) %>
-<%= link_to "Change Password", user_edit_password_path(current_user.id) %>
+<small class="profile-nav"><%= link_to "Edit Profile Info", edit_user_path(current_user.id) %></small>
+<small class="profile-nav"><%= link_to "Change Password", user_edit_password_path(current_user.id) %></small>

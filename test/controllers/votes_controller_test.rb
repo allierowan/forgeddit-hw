@@ -11,10 +11,9 @@ class VotesControllerTest < ActionDispatch::IntegrationTest
 
   test "can update a vote on a share" do
     post session_path, params: {email: 'arowan@wesleyan.edu', password: 'password'}
-    s_id = shares(:three).id
     v_id = votes(:two).id
-    patch share_vote_path(share_id: s_id, id: v_id), params: { vote: { value: 1 } }
-    assert_equal(1, Vote.find(v_id).value)
+    patch vote_path(id: v_id), params: { vote: { value: 1 } }
+    assert_equal(0, Vote.find(v_id).value)
   end
 
 end

@@ -1,6 +1,11 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.btn.btn-primary {
+  background-color: #052364;
+  border-color: #052364;
+}
+
 .comment-block {
   margin-left: 20px;
 }
@@ -14,7 +19,7 @@
 }
 .comment-section {
   margin-left: 140px;
-  border-top: 1px solid rgb(230, 230, 230);
+  border-top: 1px solid rgb(260, 260, 260);
   padding-top: 20px;
   dt {
     font-size: 13px;

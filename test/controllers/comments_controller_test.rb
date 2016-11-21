@@ -10,7 +10,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_share_comment_path(shares(:two).id, comments(:one).id)
     assert_response :success
-    assert_match(/Comment/, response.body)
+    assert_match(/Save/, response.body)
   end
 
   test "should get index" do
