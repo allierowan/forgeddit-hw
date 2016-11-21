@@ -1,0 +1,30 @@
+<% if @message %>
+  <div class="alert alert-danger">
+    <%= @message %>
+  </div>
+<% end %>
+<dl>
+  <% @shares.each do |share| %>
+    <span class="date-circle col-md-1"><strong><%= share.created_at.strftime("%b") %></strong><br><%= share.created_at.strftime("%d") %></span>
+    <article class="one-share col-md-11">
+      <dt>
+        <h4><%= link_to share.title, share.url %></h4>
+      </dt>
+      <dd>
+        <small>shared about <%= time_ago_in_words(share.created_at) %> ago by
+          <% if current_user == share.user  %>
+            you
+          <% else %>
+            <%= share.user.nick_name %>
+          <% end %></small>
+      </dd>
+      <dd>
+        <small class="share-nav"><%= link_to "#{share.comments.size} Comments", share_comments_path(share.id) %></small>
+          <% if current_user == share.user %>
+            <small class="share-nav"><%= link_to "Edit Share", edit_share_path(share.id) %></small>
+            <small class="share-nav"><%= link_to "Delete Share", share_path(share.id), method: :delete %></small>
+          <% end %>
+      </dd>
+    </article>
+  <% end %>
+</dl>

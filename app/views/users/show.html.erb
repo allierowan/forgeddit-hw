@@ -1,5 +1,5 @@
 <h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
-<h5>Forgeddit member since <%= current_user.created_at %></h5>
+<h5>Forgeddit member for <%= time_ago_in_words(current_user.created_at) %></h5>
 <dl class="dl-horizontal">
   <dt>
     Email

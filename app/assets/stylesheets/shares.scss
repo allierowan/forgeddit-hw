@@ -1,3 +1,46 @@
 // Place all the styles related to the shares controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+dt h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.one-share {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+dd:last-child {
+  margin-top: 4px;
+}
+
+dd:nth-child(2) {
+  font-style: italic;
+  color: rgb(167, 165, 167);
+}
+
+.share-nav {
+  padding: 5px;
+  a {
+    color: rgb(75, 75, 75);
+    font-weight: bold;
+  }
+}
+
+.share-nav:first-child {
+  padding-left: 0px;
+}
+
+span.date-circle {
+  margin-top: 30px;
+  background-color: rgb(199, 72, 0);
+  color: white;
+  border-radius: 250px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 13px;
+}

@@ -1,11 +1,11 @@
 <p>
   <strong><%= link_to @share.title, @share.url %></strong>
   <br />
-  <small><%= @share.created_at %> by <%= @share.user.nick_name %></small>
+  <small><%= time_ago_in_words(@share.created_at) %> ago by <%= @share.user.nick_name %></small>
 </p>
 <dl class="comment-block">
   <dt>
-    <small><%= link_to "Comment", new_share_comment_path(@share.id) %></small>
+    <small class="share-nav"><%= link_to "Comment", new_share_comment_path(@share.id) %></small>
   </dt>
   <% @comments.each do |comment| %>
     <div class="single-comment">
@@ -16,10 +16,10 @@
         <%= comment.body %>
       </dd>
       <dd>
-        <small><% if comment.user == current_user %>
-          <%= link_to "Edit", edit_share_comment_path(share_id: @share.id, id: comment.id) %>
-          <%= link_to "Delete", share_comment_path(share_id: @share.id, id: comment.id), method: :delete %>
-        <% end %></small>
+        <% if comment.user == current_user %>
+          <small class="share-nav"><%= link_to "Edit", edit_share_comment_path(share_id: @share.id, id: comment.id) %></small>
+          <small class="share-nav"><%= link_to "Delete", share_comment_path(share_id: @share.id, id: comment.id), method: :delete %></small>
+        <% end %>
       </dd>
       <% if comment.user == current_user %>
         <dd>
