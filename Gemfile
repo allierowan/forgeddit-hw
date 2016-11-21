@@ -35,6 +35,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'bcrypt'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :development do

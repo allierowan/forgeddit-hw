@@ -4,7 +4,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_share_comment_path(shares(:one).id)
     assert_response :success
-    assert_match(/Add Comment/, response.body)
+    assert_match(/Share Something/, response.body)
   end
 
   test "should get edit" do

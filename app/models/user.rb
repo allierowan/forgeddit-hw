@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :shares
   has_many :comments
+  has_many :votes
   validates :email, uniqueness: true
 
   def password=(unhashed_password)

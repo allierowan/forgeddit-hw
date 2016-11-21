@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: Github
-  url: http://www.github.com
+  share: two
   user: allie
+  value: 1
 
 two:
-  title: My Greatest Post
-  url: http://facebook.com
+  share: one
   user: katie
+  value: -1
 
 three:
-  title: Another post
-  url: http://google.com
+  share: two
   user: katie
+  value: -1
