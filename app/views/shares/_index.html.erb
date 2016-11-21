@@ -44,7 +44,7 @@
           <% if current_user == share.user  %>
             you
           <% else %>
-            <%= share.user.nick_name %>
+            <%= link_to share.user.nick_name, user_shares_path(share.user.id) %>
           <% end %></small>
       </dd>
       <dd>

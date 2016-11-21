@@ -1,2 +1,6 @@
-<h1>Your Shares</h1>
+<% if current_user == @user  %>
+  <h1>Your Shares</h1>
+<% else %>
+  <h1><%= @user.nick_name %>'s Shares</h1>
+<% end %>
 <%= render 'index' %>

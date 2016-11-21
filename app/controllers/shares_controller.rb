@@ -47,7 +47,8 @@ class SharesController < ApplicationController
   end
 
   def user_shares
-    @shares = current_user.shares.reverse
+    @user = User.find(params["user_id"])
+    @shares = @user.shares.reverse
   end
 
   def share_params
