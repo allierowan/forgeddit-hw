@@ -3,6 +3,9 @@
 <% @user.errors.full_messages.each do |message| %>
     <div class="alert alert-danger"><%= message %></div>
 <% end %>
+<% if @message %>
+  <div class="alert alert-danger"><%= @message %></div>
+<% end %>
 
 <%= form_for @user do |f| %>
   <div class="form-group">
@@ -27,7 +30,7 @@
 
   <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control", required: true %>
+    <%= f.password_field :password, class: "form-control" %>
   </div>
 
   <%= f.submit class: "btn btn-primary" %>

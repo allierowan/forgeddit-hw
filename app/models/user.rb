@@ -5,10 +5,11 @@ class User < ApplicationRecord
 
   def password=(unhashed_password)
     @_password = BCrypt::Password.create(unhashed_password)
-    self.password_hash = @_password
+    self.password_digest = @_password
   end
 
   def password
-    @_password ||= BCrypt::Password.new(password_hash)
+    @_password ||= BCrypt::Password.new(password_digest)
   end
+
 end

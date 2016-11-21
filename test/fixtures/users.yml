@@ -5,11 +5,11 @@ allie:
   last_name: Rowan
   nick_name: Alrow
   email: arowan@wesleyan.edu
-  password_hash: <%= BCrypt::Password.create("password") %>
+  password_digest: <%= BCrypt::Password.create("password") %>
 
 katie:
   first_name: Katie
   last_name: Colasacco
   nick_name: Kate
   email: fakeemail@gmail.com
-  password_hash: <%= BCrypt::Password.create("password1") %>
+  password_digest: <%= BCrypt::Password.create("password1") %>

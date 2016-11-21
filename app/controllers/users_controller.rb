@@ -5,8 +5,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    session["message"] = "Thank you for signing up!"
-    if @user.save
+    if params[:user][:password] == ""
+      @message = "Password can't be blank"
+      render :new
+    elsif @user.save
+      session["message"] = "Thank you for signing up!"
       session["current_user_id"] = @user.id
       redirect_to shares_path
     else
