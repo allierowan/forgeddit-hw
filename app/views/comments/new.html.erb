@@ -28,7 +28,7 @@
         </dd>
       </div>
       <% @share.comments.each do |comment| %>
-        <span class="comment-date-circle col-md-1">
+        <span class="comment-date-circle col-md-1 col-xs-3">
           <p class="date-month">
             <%= comment.created_at.strftime("%b") %>
           </p>
@@ -36,7 +36,7 @@
             <%= comment.created_at.strftime("%d") %>
           </p>
         </span>
-        <div class="single-comment col-md-11">
+        <div class="single-comment col-md-11 col-xs-9">
           <dt>
             <%= link_to comment.user.nick_name, user_shares_path(comment.user.id) %> <small><%= time_ago_in_words(comment.created_at) %> ago</small>
           </dt>

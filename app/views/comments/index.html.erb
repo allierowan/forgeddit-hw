@@ -5,9 +5,9 @@
 <% end %>
 <%= render 'single_share' %>
 <div class="row">
-  <aside class="col-md-1">
+  <aside class="col-md-1 col-xs-1">
   </aside>
-  <article class="col-md-11 comment-section">
+  <article class="col-md-11 col-xs-11 comment-section">
     <small class="share-nav add-comment"><%= link_to "Add Comment", new_share_comment_path(@share.id) %></small>
     <%= render 'comment_index' %>
   </article>

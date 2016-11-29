@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Latest compiled and minified CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
@@ -17,29 +18,37 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <a class="navbar-brand" href="/shares">Forgeddit</a>
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Share Something", new_share_path %></li>
-          <li>
-            <% if current_user %>
-              <%= link_to "Your Shares", user_shares_path(current_user.id) %>
-            <% end %>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <% if current_user %>
-              <%= link_to "Logout", session_path, method: :delete %>
-            <% else %>
-              <%= link_to "Login", new_session_path %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#{current_user.first_name} #{current_user.last_name}", user_path(current_user.id) if current_user %>
-          </li>
-          <li>
-            <%= link_to "Sign up", new_user_path unless current_user %>
-          </li>
-        </ul>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <header id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Share Something", new_share_path %></li>
+            <li>
+              <% if current_user %>
+                <%= link_to "Your Shares", user_shares_path(current_user.id) %>
+              <% end %>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <% if current_user %>
+                <%= link_to "Logout", session_path, method: :delete %>
+              <% else %>
+                <%= link_to "Login", new_session_path %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#{current_user.first_name} #{current_user.last_name}", user_path(current_user.id) if current_user %>
+            </li>
+            <li>
+              <%= link_to "Sign up", new_user_path unless current_user %>
+            </li>
+          </ul>
+        </header>
       </div>
     </nav>
     <div class="container">

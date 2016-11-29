@@ -1,5 +1,5 @@
 <div class=row>
-  <span class="vote-section col-md-1">
+  <span class="vote-section col-md-1 col-xs-2">
     <% vote = Vote.find_by(user: current_user, share_id: @share.id) %>
     <% if vote %>
       <p>
@@ -21,7 +21,7 @@
       </p>
     <% end %>
   </span>
-  <span class="date-circle col-md-1">
+  <span class="date-circle col-md-1 col-xs-2">
     <p class="date-month">
       <%= @share.created_at.strftime("%b") %>
     </p>
@@ -29,7 +29,7 @@
       <%= @share.created_at.strftime("%d") %>
     </p>
   </span>
-  <article class="one-share col-md-10">
+  <article class="one-share col-md-10  col-xs-8">
     <dt>
       <h4><%= link_to @share.title, @share.url, class: "share-title" %></h4>
     </dt>
