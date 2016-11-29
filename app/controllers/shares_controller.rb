@@ -14,7 +14,7 @@ class SharesController < ApplicationController
     @user = current_user
     @share = @user.shares.build(share_params)
     if @share.save
-      redirect_to shares_path
+      redirect_to shares_path, flash: { success: "Share was successful" }
     else
       render :new
     end
