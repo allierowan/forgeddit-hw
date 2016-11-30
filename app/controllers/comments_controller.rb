@@ -1,4 +1,17 @@
 class CommentsController < ApplicationController
+  before_action :logged_in?, only: [:new, :create]
+  before_action :authorized?, only: [:destroy, :edit, :update]
+
+  def logged_in?
+    flash[:danger] = "You must be logged in to complete that action"
+    redirect_to new_session_path unless current_user
+  end
+
+  def authorized?
+    flash[:danger] = "You are not the owner of that item"
+    redirect_to "/" unless current_user == Comment.find(params["id"]).user
+  end
+
   def new
     if current_user
       @comment = Comment.new()

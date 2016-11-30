@@ -7,5 +7,5 @@ one:
 
 two:
   user_id: katie
-  share_id: one
+  share: one
   body: Likewise
